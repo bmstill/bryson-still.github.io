@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryson Still - Robotics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            line-height: 1.8;
+            color: #4a5d4a;
+            background-color: #faf9f6;
+            padding: 50px 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .top-nav {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 0.95em;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #5d7a5d;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .top-nav a:hover {
+            color: #3d5a3d;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #3d5a3d;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            color: #3d5a3d;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #7a9d7a;
+        }
+
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 50px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+
+        .intro-text h3 {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #6b8e6b;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .intro-text p {
+            margin-bottom: 18px;
+            color: #5a6e5a;
+            line-height: 1.9;
+        }
+
+        .intro-text a {
+            color: #6b8e6b;
+            text-decoration: none;
+            border-bottom: 1px solid #c4d4c4;
+            transition: border-color 0.3s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #6b8e6b;
+        }
+
+        .intro-text strong {
+            color: #3d5a3d;
+            font-weight: 700;
+        }
+
+        .profile-pic {
+            width: 280px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(61, 90, 61, 0.12);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6b8e6b 0%, #8ab68a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 30px;
+            margin-bottom: 45px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid #e3e8e3;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .project-thumbnail {
+            width: 220px;
+            height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #f0f4f0;
+            box-shadow: 0 4px 12px rgba(61, 90, 61, 0.08);
+        }
+
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content h3 {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #3d5a3d;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .project-meta {
+            font-size: 0.9em;
+            color: #7a9d7a;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project-meta a {
+            color: #6b8e6b;
+            text-decoration: none;
+        }
+
+        .project-meta a:hover {
+            text-decoration: underline;
+        }
+
+        .project-description {
+            font-size: 0.95em;
+            color: #5a6e5a;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .project-highlights {
+            margin-bottom: 15px;
+            color: #5a6e5a;
+            font-size: 0.95em;
+        }
+
+        .project-highlights strong {
+            color: #3d5a3d;
+            font-weight: 700;
+        }
+
+        .project-highlights li {
+            margin-bottom: 6px;
+            margin-left: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 7px 16px;
+            border: 1.5px solid #8ab68a;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #6b8e6b;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s;
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project-link:hover {
+            background-color: #8ab68a;
+            color: white;
+        }
+
+        .skills-section {
+            margin-top: 50px;
+            padding: 35px;
+            background-color: #f0f4f0;
+            border-radius: 10px;
+            border-left: 4px solid #7a9d7a;
+        }
+
+        .skills-section h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .skill-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(61, 90, 61, 0.06);
+        }
+
+        .skill-box h4 {
+            font-weight: 700;
+            color: #6b8e6b;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .skill-box p {
+            color: #5a6e5a;
+            font-size: 0.9em;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid #7a9d7a;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.8em;
+            color: #8ab68a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-value {
+            display: block;
+            font-size: 1em;
+            color: #6b8e6b;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border-bottom: 2px solid #c4d4c4;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-value:hover {
+            border-bottom-color: #8ab68a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            color: #a0b0a0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .intro-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-pic {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .project-thumbnail {
+                width: 100%;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .top-nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="#home">Home</a> | <a href="https://smile-robotics-lab.github.io/" target="_blank">Lab</a> | <a href="https://github.com/bryson-still" target="_blank">GitHub</a>
+    </div>
+
+    <div class="container">
+        <h1>Bryson Still</h1>
+
+        <!-- Introduction Section -->
+        <div class="intro-section">
+            <div class="intro-text">
+                <h3>Robotics Hardware Design Engineer</h3>
+                
+                <p>I am an Undergraduate Researcher in the <a href="https://smile-robotics-lab.github.io/" target="_blank">SMILE Robotics Lab</a> at <a href="https://www.clemson.edu/" target="_blank">Clemson University</a>, advised by <a href="https://luyangzhao.github.io/" target="_blank">Dr. Luyang Zhao</a>. My research focuses on designing and fabricating robotic systems that solve real-world problems through innovative mechanical design and control strategies.</p>
+
+                <p>As a <strong>Breakthrough Scholar</strong> (Clemson's most prestigious merit scholarship), I pursue a B.S. in Electrical Engineering with specialization in robotics and hardware systems. My work spans the complete development cycle—from CAD and mechanical analysis through fabrication, assembly, control implementation, and experimental validation.</p>
+
+                <p>I am passionate about advancing robotics through <strong>cost optimization, reproducible design, and open-source documentation</strong>. My research emphasizes making advanced robotics technologies accessible and affordable for researchers and practitioners everywhere.</p>
+            </div>
+
+            <div class="profile-pic">
+                <div class="placeholder">Your Photo</div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <h2>Research & Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project">
+            <div class="project-thumbnail">
+                <div class="placeholder" style="font-size: 0.8em; background: linear-gradient(135deg, #7a9d7a 0%, #96b896 100%);">Project Image</div>
+            </div>
+            <div class="project-content">
+                <h3>Modular Gripper Platform: Achieving 33/33 Human Grasp Types</h3>
+                <div class="project-meta">
+                    <strong>Bryson Still</strong>, Dr. Luyang Zhao | SMILE Robotics Lab | Active Development
+                </div>
+                <div class="project-description">
+                    Designed a task-adaptive gripper system with 6 modular finger morphologies to overcome fundamental limitations of fixed-design grippers. Successfully achieved all 33 standard human grasp types through intelligent morphology selection and innovative tendon-driven actuation.
+                </div>
+                <div class="project-highlights">
+                    <strong>Key Achievements:</strong>
+                    <ul>
+                        <li>Grasps objects where commercial systems fail (eggs, thin objects, small items)</li>
+                        <li>Production cost &lt;$250 per unit (vs. $3K-5K+ commercial equivalents)</li>
+                        <li>Complete open-source documentation: CAD, assembly guides, validation data</li>
+                        <li>Modular design enables rapid iteration and morphology exploration</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/bryson-still/modular-gripper-platform" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://github.com/bryson-still/modular-gripper-platform" class="project-link" target="_blank">CAD Models</a>
+                    <a href="https://github.com/bryson-still/modular-gripper-platform" class="project-link" target="_blank">Documentation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <div class="project-thumbnail">
+                <div class="placeholder" style="font-size: 0.8em; background: linear-gradient(135deg, #8ab68a 0%, #a8c8a8 100%);">Project Image</div>
+            </div>
+            <div class="project-content">
+                <h3>Autonomous Tool-Changer: Self-Aligning ISO 9409-1 Interface</h3>
+                <div class="project-meta">
+                    <strong>Bryson Still</strong>, Dr. Luyang Zhao | SMILE Robotics Lab | Prototype V1 Complete
+                </div>
+                <div class="project-description">
+                    Engineered an ISO 9409-1 compliant tool-changer enabling autonomous end-effector swaps without recalibration. Uses passive magnetic alignment and modular design for rapid tool integration across multiple robot platforms.
+                </div>
+                <div class="project-highlights">
+                    <strong>Technical Specifications:</strong>
+                    <ul>
+                        <li>Self-aligning magnetic gears: &lt;1.6mm concentricity tolerance</li>
+                        <li>Tool swap time: &lt;5 seconds | Cost: &lt;$250 production BOM</li>
+                        <li>Compatible with Flexiv Rizon, Boston Dynamics Spot, industrial arms</li>
+                        <li>Integrated gripper locking and sensor pass-through</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/bryson-still/autonomous-tool-changer" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://github.com/bryson-still/autonomous-tool-changer" class="project-link" target="_blank">Design Docs</a>
+                    <a href="https://github.com/bryson-still/autonomous-tool-changer" class="project-link" target="_blank">CAD Assembly</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <div class="project-thumbnail">
+                <div class="placeholder" style="font-size: 0.8em; background: linear-gradient(135deg, #96b896 0%, #b0c8b0 100%);">Project Image</div>
+            </div>
+            <div class="project-content">
+                <h3>AEGISSat-1 CubeSat: ADCS Design for LEO Research</h3>
+                <div class="project-meta">
+                    <strong>Bryson Still</strong> (ADCS/GNSS Lead) | Clemson CubeSat Team | AFRL Funded
+                </div>
+                <div class="project-description">
+                    Co-founded student-led CubeSat development team; lead Attitude Determination & Control System (ADCS) and GNSS subsystem design. Mission concept accepted and funded through Air Force Research Laboratory and University Nanosatellite Program.
+                </div>
+                <div class="project-highlights">
+                    <strong>Contributions:</strong>
+                    <ul>
+                        <li>Defined 30+ mission requirements and subsystem specifications</li>
+                        <li>Designed ADCS architecture for precision attitude control in LEO</li>
+                        <li>Specified flight constraints for graphene degradation research experiments</li>
+                        <li>Led systems integration documentation and requirements management</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://smile-robotics-lab.github.io/" class="project-link" target="_blank">Learn More</a>
+                    <a href="https://smile-robotics-lab.github.io/" class="project-link" target="_blank">Mission Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>Mechanical Design</h4>
+                    <p>SOLIDWORKS, AutoCAD, KiCAD, Onshape, FEA, Mechanical Simulation, Tolerance Analysis</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Fabrication & Manufacturing</h4>
+                    <p>3D Printing (FDM), CNC Machining, Laser Cutting, PCB Design, Tendon-Driven Systems</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Programming & Control</h4>
+                    <p>Python, MATLAB, C, Unix/Terminal, ROS, Motor Control (Dynamixel, FeeTech)</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Robotics & Electronics</h4>
+                    <p>Gripper Design, Motor Control Architecture, Power Systems, Mechanical Testing</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Soft Robotics</h4>
+                    <p>Tendon-Driven Actuation, Compliance Design, Material Selection, Task-Adaptive Systems</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Documentation</h4>
+                    <p>Technical Writing, CAD Documentation, Assembly Guides, Research Methodology</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <a href="mailto:bmstill@clemson.edu" class="contact-value">bmstill@clemson.edu</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Phone</span>
+                <a href="tel:+18436977608" class="contact-value">843-697-7608</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/bryson-still" class="contact-value" target="_blank">linkedin.com/in/bryson-still</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/bryson-still" class="contact-value" target="_blank">github.com/bryson-still</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Lab Website</span>
+                <a href="https://smile-robotics-lab.github.io/" class="contact-value" target="_blank">SMILE Robotics Lab</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Advisor</span>
+                <a href="https://luyangzhao.github.io/" class="contact-value" target="_blank">Dr. Luyang Zhao</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Bryson Still. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
